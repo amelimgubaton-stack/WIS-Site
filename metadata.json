@@ -1,0 +1,6 @@
+{
+  "name": "Woo Import Solution",
+  "description": "Fast, reliable import, freight forwarding, and customs clearance logistics solution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
