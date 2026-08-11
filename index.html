@@ -276,7 +276,7 @@
             "name": "How do I access live tracking for my active China to Philippines shipment?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can use the real-time tracking tool directly on our website or log in to wooimportsolution.app for live GPS telemetry, customs clearance updates, and milestone notifications."
+              "text": "You can use the real-time tracking tool directly on our website or log in to wooimportsolution.app for real-time shipment tracking, customs clearance updates, and milestone notifications."
             }
           }
         ]
@@ -483,7 +483,7 @@
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"></path></svg>
             </div>
             <div>
-              <p class="text-[9px] text-purple-600 font-bold uppercase leading-none">Live GPS Telemetry</p>
+              <p class="text-[9px] text-purple-600 font-bold uppercase leading-none">Real-Time Shipment Tracking</p>
               <p class="text-xs font-black text-purple-950">En Route to Manila</p>
             </div>
           </div>
@@ -756,7 +756,7 @@
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                Real-Time GPS Vessel & Cargo Telemetry
+                Real-Time Shipment Tracking
               </li>
             </ul>
           </div>
@@ -786,7 +786,7 @@
             <ul class="space-y-2.5 text-xs font-semibold text-purple-950">
               <li class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                100% Bureau of Customs (BOC) Clearance
+                Customs Clearance Support
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -899,108 +899,191 @@
   <!-- ================= CHINA TO PHILIPPINES TRANSIT & ROUTE PLANNER ================= -->
   <section id="planner" class="py-16 bg-purple-50/50 border-b border-purple-100">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-2xl p-8 sm:p-10 border border-purple-100 shadow-xl shadow-purple-900/5">
-        <div class="text-center max-w-xl mx-auto mb-8">
+      <div class="bg-white rounded-2xl p-8 sm:p-10 border border-purple-100 shadow-xl shadow-purple-900/5 space-y-10">
+        
+        <!-- Section SEO Header -->
+        <div class="text-center max-w-2xl mx-auto">
           <span class="text-xs font-bold text-purple-700 uppercase tracking-wider px-3 py-1 bg-purple-100 rounded-full">Route & Schedule Planner</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-purple-950 mt-3 font-display">China to PH Transit Lead Time</h2>
-          <p class="text-purple-900/70 text-xs mt-1.5">Select your supplier's China warehouse, PH destination, and shipping mode for door-to-door schedules.</p>
+          <h2 class="text-2xl sm:text-3xl font-black text-purple-950 mt-3 font-display">
+            China to Philippines Shipping Routes & Transit Times
+          </h2>
+          <p class="text-purple-900/70 text-sm mt-3 leading-relaxed">
+            Woo Import Solution provides comprehensive options for shipping from China to Philippines through fast air freight and reliable ocean sea freight. Use our interactive route planner below to calculate real-time transit lead times, cutoff schedules, and departure frequencies for your door-to-door cargo.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <!-- China Origin Warehouse -->
-          <div>
-            <label for="plan-origin" class="block text-xs font-bold text-purple-950 mb-1.5">China Origin Warehouse</label>
-            <select id="plan-origin" class="w-full bg-purple-50/50 border border-purple-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-purple-950 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-200">
-              <option value="guangzhou">Guangzhou Consolidation Hub</option>
-              <option value="yiwu">Yiwu Export Warehouse</option>
-              <option value="shenzhen">Shenzhen Air Terminal</option>
-              <option value="foshan">Foshan Cargo Depot</option>
-            </select>
-          </div>
-
-          <!-- PH Destination Region -->
-          <div>
-            <label for="plan-dest" class="block text-xs font-bold text-purple-950 mb-1.5">PH Destination Region</label>
-            <select id="plan-dest" class="w-full bg-purple-50/50 border border-purple-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-purple-950 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-200">
-              <option value="manila">Metro Manila / NCR (Door-to-Door)</option>
-              <option value="cebu">Cebu & Central Visayas</option>
-              <option value="davao">Davao & Mindanao</option>
-              <option value="luzon">Central / Northern Luzon</option>
-            </select>
-          </div>
-
-          <!-- Transport Mode -->
-          <div>
-            <label for="plan-mode" class="block text-xs font-bold text-purple-950 mb-1.5">Shipping Method</label>
-            <select id="plan-mode" class="w-full bg-purple-50/50 border border-purple-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-purple-950 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-200">
-              <option value="air">Express Air Freight (Fastest)</option>
-              <option value="sea-lcl">Ocean LCL (Shared Cargo)</option>
-              <option value="sea-fcl">Ocean FCL (Full Container)</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Calculated Transit & Schedule Output Box -->
-        <div class="mt-8 pt-6 border-t border-purple-100 bg-gradient-to-r from-purple-950 via-[#2B1055] to-[#1E1035] p-6 sm:p-7 rounded-xl text-white shadow-xl space-y-6">
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <!-- Interactive Planner Controls -->
+        <div class="bg-purple-50/40 p-5 rounded-2xl border border-purple-100/80">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- China Origin Warehouse -->
             <div>
-              <span class="text-[10px] font-bold text-purple-300 uppercase tracking-wider block">Estimated Door-to-Door Lead Time</span>
-              <div class="text-3xl font-black text-white font-display mt-0.5" id="plan-time">3 – 5 Days</div>
-              <p class="text-xs text-purple-300/80 mt-1" id="plan-port-text">Direct Flight to NAIA (MNL) & Fast Customs Release</p>
+              <label for="plan-origin" class="block text-xs font-bold text-purple-950 mb-1.5">China Origin Warehouse</label>
+              <select id="plan-origin" class="w-full bg-white border border-purple-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-purple-950 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-200">
+                <option value="guangzhou">Guangzhou Consolidation Hub</option>
+                <option value="yiwu">Yiwu Export Warehouse</option>
+                <option value="shenzhen">Shenzhen Air Terminal</option>
+                <option value="foshan">Foshan Cargo Depot</option>
+              </select>
             </div>
 
-            <div class="bg-purple-900/50 border border-purple-700/50 p-3.5 rounded-xl text-xs space-y-1.5">
-              <div class="flex justify-between">
-                <span class="text-purple-300">Cutoff / Departure:</span>
-                <span class="font-bold text-pink-300" id="plan-cutoff">Daily Departure at 8:00 PM</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-purple-300">Frequency:</span>
-                <span class="font-bold text-white" id="plan-freq">Flight 7 Days / Week</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-purple-300">Customs Clearance:</span>
-                <span class="font-bold text-emerald-400">Pre-Cleared Express</span>
-              </div>
+            <!-- PH Destination Region -->
+            <div>
+              <label for="plan-dest" class="block text-xs font-bold text-purple-950 mb-1.5">PH Destination Region</label>
+              <select id="plan-dest" class="w-full bg-white border border-purple-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-purple-950 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-200">
+                <option value="manila">Metro Manila / NCR (Door-to-Door)</option>
+                <option value="cebu">Cebu & Central Visayas</option>
+                <option value="davao">Davao & Mindanao</option>
+                <option value="luzon">Central / Northern Luzon</option>
+              </select>
             </div>
 
-            <div class="flex justify-start md:justify-end">
-              <a href="https://wooimportsolution.app/" class="w-full md:w-auto inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
-                <span>Book Space / Schedule Cargo</span>
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Step Timeline -->
-          <div class="pt-4 border-t border-purple-800/60">
-            <div class="text-[11px] font-bold text-purple-300 uppercase tracking-wider mb-3">Estimated Route Milestones</div>
-            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs font-semibold">
-              <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
-                <div class="text-pink-400 font-bold text-[10px]">Step 1</div>
-                <div class="text-white text-[11px] font-bold mt-0.5">China Receiving</div>
-              </div>
-              <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
-                <div class="text-pink-400 font-bold text-[10px]">Step 2</div>
-                <div class="text-white text-[11px] font-bold mt-0.5">Export Clearance</div>
-              </div>
-              <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
-                <div class="text-pink-400 font-bold text-[10px]">Step 3</div>
-                <div class="text-white text-[11px] font-bold mt-0.5">Transit to PH</div>
-              </div>
-              <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
-                <div class="text-pink-400 font-bold text-[10px]">Step 4</div>
-                <div class="text-white text-[11px] font-bold mt-0.5">BOC Release</div>
-              </div>
-              <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg col-span-2 sm:col-span-1">
-                <div class="text-emerald-400 font-bold text-[10px]">Step 5</div>
-                <div class="text-white text-[11px] font-bold mt-0.5">Final PH Delivery</div>
-              </div>
+            <!-- Transport Mode -->
+            <div>
+              <label for="plan-mode" class="block text-xs font-bold text-purple-950 mb-1.5">Shipping Method</label>
+              <select id="plan-mode" class="w-full bg-white border border-purple-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-purple-950 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-200">
+                <option value="air">Express Air Freight (Fastest)</option>
+                <option value="sea-lcl">Ocean LCL (Shared Cargo)</option>
+                <option value="sea-fcl">Ocean FCL (Full Container)</option>
+              </select>
             </div>
           </div>
 
+          <!-- Calculated Transit & Schedule Output Box -->
+          <div class="mt-6 pt-6 border-t border-purple-200/60 bg-gradient-to-r from-purple-950 via-[#2B1055] to-[#1E1035] p-6 sm:p-7 rounded-xl text-white shadow-xl space-y-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+              <div>
+                <span class="text-[10px] font-bold text-purple-300 uppercase tracking-wider block">Estimated Door-to-Door Lead Time</span>
+                <div class="text-3xl font-black text-white font-display mt-0.5" id="plan-time">3 – 5 Days</div>
+                <p class="text-xs text-purple-300/80 mt-1" id="plan-port-text">Direct Flight to NAIA (MNL) & Fast Customs Release</p>
+              </div>
+
+              <div class="bg-purple-900/50 border border-purple-700/50 p-3.5 rounded-xl text-xs space-y-1.5">
+                <div class="flex justify-between">
+                  <span class="text-purple-300">Cutoff / Departure:</span>
+                  <span class="font-bold text-pink-300" id="plan-cutoff">Daily Departure at 8:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-purple-300">Frequency:</span>
+                  <span class="font-bold text-white" id="plan-freq">Flight 7 Days / Week</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-purple-300">Customs Clearance:</span>
+                  <span class="font-bold text-emerald-400">Pre-Cleared Express</span>
+                </div>
+              </div>
+
+              <div class="flex justify-start md:justify-end">
+                <a href="https://wooimportsolution.app/" class="w-full md:w-auto inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
+                  <span>Book Space / Schedule Cargo</span>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Step Timeline -->
+            <div class="pt-4 border-t border-purple-800/60">
+              <div class="text-[11px] font-bold text-purple-300 uppercase tracking-wider mb-3">Estimated Route Milestones</div>
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs font-semibold">
+                <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
+                  <div class="text-pink-400 font-bold text-[10px]">Step 1</div>
+                  <div class="text-white text-[11px] font-bold mt-0.5">China Receiving</div>
+                </div>
+                <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
+                  <div class="text-pink-400 font-bold text-[10px]">Step 2</div>
+                  <div class="text-white text-[11px] font-bold mt-0.5">Export Clearance</div>
+                </div>
+                <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
+                  <div class="text-pink-400 font-bold text-[10px]">Step 3</div>
+                  <div class="text-white text-[11px] font-bold mt-0.5">Transit to PH</div>
+                </div>
+                <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg">
+                  <div class="text-pink-400 font-bold text-[10px]">Step 4</div>
+                  <div class="text-white text-[11px] font-bold mt-0.5">BOC Release</div>
+                </div>
+                <div class="bg-purple-900/40 border border-purple-700/40 p-2 rounded-lg col-span-2 sm:col-span-1">
+                  <div class="text-emerald-400 font-bold text-[10px]">Step 5</div>
+                  <div class="text-white text-[11px] font-bold mt-0.5">Final PH Delivery</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
+
+        <!-- SEO Information Grid with Logical H3 Headings -->
+        <div class="pt-4 border-t border-purple-100">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- H3: China Origin Warehouses -->
+            <div class="bg-purple-50/40 p-5 rounded-xl border border-purple-100/80 space-y-1.5">
+              <h3 class="text-base font-bold text-purple-950 font-display flex items-center gap-2">
+                <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                China Origin Warehouses
+              </h3>
+              <p class="text-xs text-purple-900/70 leading-relaxed">
+                Consolidate and drop off cargo at our primary hub locations in Guangzhou, Yiwu, and Shenzhen for streamlined China to PH shipping.
+              </p>
+            </div>
+
+            <!-- H3: Philippines Destinations -->
+            <div class="bg-purple-50/40 p-5 rounded-xl border border-purple-100/80 space-y-1.5">
+              <h3 class="text-base font-bold text-purple-950 font-display flex items-center gap-2">
+                <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                Philippines Destinations
+              </h3>
+              <p class="text-xs text-purple-900/70 leading-relaxed">
+                Full door-to-door delivery coverage reaching Metro Manila, Luzon provinces, Cebu (Central Visayas), and Davao (Mindanao).
+              </p>
+            </div>
+
+            <!-- H3: Air Freight -->
+            <div class="bg-purple-50/40 p-5 rounded-xl border border-purple-100/80 space-y-1.5">
+              <h3 class="text-base font-bold text-purple-950 font-display flex items-center gap-2">
+                <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                Air Freight
+              </h3>
+              <p class="text-xs text-purple-900/70 leading-relaxed">
+                Fast air freight China to Philippines with 3–5 days transit lead time to Metro Manila, daily flight departures, and pre-filed customs clearance.
+              </p>
+            </div>
+
+            <!-- H3: Sea Freight -->
+            <div class="bg-purple-50/40 p-5 rounded-xl border border-purple-100/80 space-y-1.5">
+              <h3 class="text-base font-bold text-purple-950 font-display flex items-center gap-2">
+                <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                Sea Freight
+              </h3>
+              <p class="text-xs text-purple-900/70 leading-relaxed">
+                Economical sea freight China to Philippines options managed by an experienced freight forwarder Philippines team for commercial bulk orders.
+              </p>
+            </div>
+
+            <!-- H3: LCL Shipping -->
+            <div class="bg-purple-50/40 p-5 rounded-xl border border-purple-100/80 space-y-1.5">
+              <h3 class="text-base font-bold text-purple-950 font-display flex items-center gap-2">
+                <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                LCL Shipping
+              </h3>
+              <p class="text-xs text-purple-900/70 leading-relaxed">
+                Shared container consolidation (LCL shipping China to Philippines) with 12–16 days average transit time, ideal for small to medium-sized commercial shipments.
+              </p>
+            </div>
+
+            <!-- H3: FCL Shipping -->
+            <div class="bg-purple-50/40 p-5 rounded-xl border border-purple-100/80 space-y-1.5">
+              <h3 class="text-base font-bold text-purple-950 font-display flex items-center gap-2">
+                <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                FCL Shipping
+              </h3>
+              <p class="text-xs text-purple-900/70 leading-relaxed">
+                Dedicated container space (FCL shipping China to Philippines) with 10–14 days transit, providing direct port release and maximum security for large cargo volumes.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1057,7 +1140,7 @@
             <svg class="faq-arrow w-5 h-5 text-purple-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div class="faq-answer hidden px-6 pb-4 text-sm text-purple-900/70 border-t border-purple-100 pt-3">
-            With electronic pre-filing and direct Bureau of Customs EDI portal connections, most standard shipments for your import from China to PH are pre-cleared within 24 hours of flight arrival or vessel docking.
+            With electronic pre-filing, most standard shipments for your import from China to PH are pre-cleared within 24 hours of flight arrival or vessel docking.
           </div>
         </div>
 
@@ -1090,7 +1173,7 @@
             <svg class="faq-arrow w-5 h-5 text-purple-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div class="faq-answer hidden px-6 pb-4 text-sm text-purple-900/70 border-t border-purple-100 pt-3">
-            Woo Import Solution simplifies every import from China to PH with competitive air and ocean rates, guaranteed Bureau of Customs clearance, and complete door-to-door shipping from Guangzhou, Yiwu, and Shenzhen straight to your doorstep anywhere in the Philippines.
+            Woo Import Solution simplifies every import from China to PH with competitive air and ocean rates, professional Customs Clearance Support, and complete door-to-door shipping from Guangzhou, Yiwu, and Shenzhen straight to your doorstep anywhere in the Philippines.
           </div>
         </div>
       </div>
