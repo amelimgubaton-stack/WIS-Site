@@ -466,12 +466,12 @@
               <p class="text-[11px] text-purple-700 font-bold uppercase tracking-wider">Compliance</p>
             </div>
             <div class="p-3.5 bg-white/90 rounded-xl border border-purple-100 shadow-sm">
-              <p class="text-xl font-black text-purple-900 font-display">15k+</p>
+              <p class="text-xl font-black text-purple-900 font-display">3k+</p>
               <p class="text-[11px] text-purple-700 font-bold uppercase tracking-wider">Shipments / Mo</p>
             </div>
             <div class="p-3.5 bg-white/90 rounded-xl border border-purple-100 shadow-sm">
-              <p class="text-xl font-black text-purple-900 font-display">Alibaba</p>
-              <p class="text-[11px] text-purple-700 font-bold uppercase tracking-wider">Network Partner</p>
+              <p class="text-xl font-black text-purple-900 font-display">All-In</p>
+              <p class="text-[11px] text-purple-700 font-bold uppercase tracking-wider">Import</p>
             </div>
           </div>
         </div>
@@ -847,7 +847,7 @@
             Why Choose Woo Import Solution
           </h2>
           <p class="text-purple-200/80 text-base leading-relaxed">
-            Built for modern Pinoy importers and growing brands. Eliminate supply chain friction, avoid costly customs holds, and track every container with absolute geometric precision.
+            Built for modern Pinoy importers and growing brands. Eliminate supply chain friction, avoid costly customs holds, and Track your shipments with clear, real-time status updates.
           </p>
 
           <div class="pt-2">
@@ -967,26 +967,11 @@
           <!-- Calculated Transit & Schedule Output Box -->
           <div class="mt-6 pt-6 border-t border-purple-200/60 bg-gradient-to-r from-purple-950 via-[#2B1055] to-[#1E1035] p-6 sm:p-7 rounded-xl text-white shadow-xl space-y-6">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div>
                 <span class="text-[10px] font-bold text-purple-300 uppercase tracking-wider block">Estimated Door-to-Door Lead Time</span>
                 <div class="text-3xl font-black text-white font-display mt-0.5" id="plan-time">3 – 5 Days — Express Air Freight</div>
                 <p class="text-xs text-purple-300/80 mt-1" id="plan-port-text">Direct Flight to NAIA (MNL) & Fast Customs Release</p>
-              </div>
-
-              <div class="bg-purple-900/50 border border-purple-700/50 p-3.5 rounded-xl text-xs space-y-1.5">
-                <div class="flex justify-between">
-                  <span class="text-purple-300">Cutoff / Departure:</span>
-                  <span class="font-bold text-pink-300" id="plan-cutoff">Daily Departure at 8:00 PM</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-purple-300">Frequency:</span>
-                  <span class="font-bold text-white" id="plan-freq">Flight 7 Days / Week</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-purple-300">Customs Clearance:</span>
-                  <span class="font-bold text-emerald-400">Pre-Cleared Express</span>
-                </div>
               </div>
 
               <div class="flex justify-start md:justify-end">
@@ -1391,18 +1376,18 @@
         if (mode === 'air') {
           planTime.textContent = (3 + extraDays) + ' – ' + (5 + extraDays) + ' Days — Express Air Freight';
           planPortText.textContent = 'Direct Express Flight to NAIA (MNL) & Fast Customs Release';
-          planCutoff.textContent = 'Daily Cutoff at 8:00 PM';
-          planFreq.textContent = 'Flight 7 Days / Week';
+          if (planCutoff) planCutoff.textContent = 'Daily Cutoff at 8:00 PM';
+          if (planFreq) planFreq.textContent = 'Flight 7 Days / Week';
         } else if (mode === 'sea-lcl') {
           planTime.textContent = (12 + extraDays) + ' – ' + (16 + extraDays) + ' Days — Ocean LCL Sea Freight';
           planPortText.textContent = 'Consolidated Vessel to Manila South Harbor & Door Delivery';
-          planCutoff.textContent = 'Weekly Cutoff: Wed 6:00 PM';
-          planFreq.textContent = '2 Sailings per Week';
+          if (planCutoff) planCutoff.textContent = 'Weekly Cutoff: Wed 6:00 PM';
+          if (planFreq) planFreq.textContent = '2 Sailings per Week';
         } else if (mode === 'sea-fcl') {
           planTime.textContent = (10 + extraDays) + ' – ' + (14 + extraDays) + ' Days — Ocean FCL Sea Freight';
           planPortText.textContent = 'Direct Container Vessel to MICP / Manila Harbour Center';
-          planCutoff.textContent = 'Cutoff: Tue & Fri 5:00 PM';
-          planFreq.textContent = '3 Direct Ships per Week';
+          if (planCutoff) planCutoff.textContent = 'Cutoff: Tue & Fri 5:00 PM';
+          if (planFreq) planFreq.textContent = '3 Direct Ships per Week';
         }
       }
 
