@@ -334,7 +334,7 @@
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.callMethod.apply(n,arguments)};
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
   n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];
@@ -346,6 +346,10 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body class="antialiased selection:bg-purple-600 selection:text-white min-h-screen flex flex-col bg-purple-50/30">
+  <!-- Meta Pixel noscript fallback -->
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1413766207560718&ev=PageView&noscript=1"
+  /></noscript>
 
 
   <!-- ================= SECTION 1: HEADER / NAVIGATION ================= -->
